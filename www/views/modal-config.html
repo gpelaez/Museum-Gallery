@@ -1,0 +1,38 @@
+<ion-modal-view>
+	<ion-header-bar>
+		<h1 class="title">Configuración</h1>
+		<button class="button button-icon icon ion-close-round" ng-click="modalConfig.hide()"></button>
+	</ion-header-bar>
+	<ion-content>
+	  <div class="list">
+	  	<form novalidate class="settings">
+	  		<label class="item item-input">
+	  			<span class="input-label">Título</span>
+			    <input type="text" ng-model="settings.title" ng-blur="saveChange()">
+			</label>
+			<label class="item item-input">
+	  			<span class="input-label">Descripción</span>
+			    <input type="text" ng-model="settings.description">
+			</label>
+			<label class="item item-input">
+	  			<span class="input-label">Contraseña</span>
+			    <input type="password" ng-model="settings.password">
+			</label>
+			<label class="item item-input">
+	  			<span class="input-label">Descripción</span>
+			    <input type="text" ng-model="settings.description">
+			</label>
+			<div class="item item-button-right item-stable">
+				Galerías
+				<button class="button button-energized button-small" ng-click="createGallery()">
+					<i class="icon ion-plus-round"></i>
+				</button>
+
+			</div>
+			<label class="item item-input">
+			    <textarea placeholder="Comments"></textarea>
+			</label>
+	  	</form>
+		</div>
+	</ion-content>
+</ion-modal-view>
