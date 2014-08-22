@@ -26,12 +26,15 @@
   </head>
   <body ng-app="starter">
 
-    <ion-pane ng-controller="MainCtrl">
+    <ion-pane ng-controller="MainCtrl" ng-style="{'background-color':settings.backgroundColor, 'color': settings.textColor}">
       <ion-header-bar class="bar-stable">
         <h1 class="title">{{settings.title}}</h1>
          <button class="button button-icon icon ion-settings" ng-click="config()"></button>
       </ion-header-bar>
       <ion-content>
+        <div class="galleries-wrapper" style="height:50%">
+            {{settings.description}}
+        </div>
       </ion-content>
     </ion-pane>
   </body>

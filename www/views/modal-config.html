@@ -24,7 +24,17 @@
 			</label>
 			<label class="item item-input">
 	  			<span class="input-label">Color de fondo</span>
-			    <input type="color" ng-model="settings.backgroundColor" ng-blur="saveChange()">
+	  			<div class="item-input-wrapper" style="max-width:25%;">
+	  				<input type="text" ng-model="settings.backgroundColor" ng-blur="saveChange()">
+	  			</div>
+	  			<input type="color" ng-model="settings.backgroundColor" ng-blur="saveChange()" class="" style="max-width:70%; float:right;">
+			</label>
+			<label class="item item-input">
+	  			<span class="input-label">Color de texto</span>
+	  			<div class="item-input-wrapper" style="max-width:25%;">
+	  				<input type="text" ng-model="settings.textColor" ng-blur="saveChange()">
+	  			</div>
+	  			<input type="color" ng-model="settings.textColor" ng-blur="saveChange()" class="" style="max-width:70%; float:right;">
 			</label>
 			<div class="item item-button-right item-stable">
 				Galerías
@@ -33,7 +43,11 @@
 				</button>
 
 			</div>
-	  	</form>
+			<div class="item item-avatar" ng-repeat="gallery in settings.galleries" ng-init="initGallery($index)">
+				<img ng-src="gallery.thumbnail">
+				<h2>{{gallery.name}}</h2>
+				<span class="badge badge-assertive">0</span>
+			</div>
 		</div>
 	</ion-content>
 </ion-modal-view>
